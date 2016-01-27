@@ -65,9 +65,49 @@ html {
     color: #fff;
 }
 
+ .navbar .links-container2 {
+     display: table;
+     position: absolute;
+     top: 0;
+     right: 105px;
+     height: 100px;
+     color: white;
+     text-decoration: none;
+ }
+
+.links-container2 .navbar-link2 {
+     display: table-cell;
+     position: relative;
+     height: 100%;
+     padding-left: 1rem;
+     padding-right: 1rem;
+     vertical-align: middle;
+     color: white;
+     font-size: 0.625rem;
+     letter-spacing: 0.05rem;
+     font-weight: 700;
+     text-transform: uppercase;
+     text-decoration: none;
+     cursor: pointer;
+ }
+ 
+   
+ .links-container2 .navbar-link2:hover {
+     color: rgb(233,50,117);
+ }
+
+.links-container2 .navbar-link2:active {
+    background-color: rgb(233,50,117);
+    color: #fff;
+}
+
 .container {
      margin: 0 auto;
      max-width: 64rem;
+ }
+
+.container.narrow {
+     max-width: 56rem;
  }
 
 /* Medium screens (640px) */
