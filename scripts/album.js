@@ -30,6 +30,21 @@
      ]
  };
 
+var albumWill = {
+     name: 'The Telephone2',
+     artist: 'Will',
+     label: 'EM',
+     year: '2009',
+     albumArtUrl: 'assets/images/album_covers/04.png',
+     songs: [
+         { name: 'Hello, Operator?', length: '1:01' },
+         { name: 'Ring, ring, ring', length: '5:01' },
+         { name: 'Fits in your pocket', length: '3:21'},
+         { name: 'Can you hear me now?', length: '3:14' },
+         { name: 'Wrong phone number', length: '2:15'}
+     ]
+ };
+
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -42,14 +57,13 @@ var createSongRow = function(songNumber, songName, songLength) {
      return template;
  };
 
-var setCurrentAlbum = function(album) {
-     
-     var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
      var albumArtist = document.getElementsByClassName('album-view-artist')[0];
      var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
      var albumImage = document.getElementsByClassName('album-cover-art')[0];
      var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
- 
+
+var setCurrentAlbum = function(album) {
      
      albumTitle.firstChild.nodeValue = album.name;
      albumArtist.firstChild.nodeValue = album.artist;
@@ -67,4 +81,14 @@ var setCurrentAlbum = function(album) {
  
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
+     
+     var albums = [albumPicasso, albumMarconi, albumWill];
+     var index = 1;
+     albumImage.addEventListener("click", function(event) {
+         setCurrentAlbum(albums[index]);
+         index++;
+         if (index == albums.length) {
+             index = 0;
+         }
+     });
  };
